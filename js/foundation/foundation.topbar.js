@@ -97,42 +97,6 @@
           .toggleClass('expanded')
           .css('height', '');
       }
-
-      if(self.settings.scrolltop)
-      {
-        if (!topbar.hasClass('expanded')) {
-          if (topbar.hasClass('fixed')) {
-            topbar.parent().addClass('fixed');
-            topbar.removeClass('fixed');
-            $('body').addClass('f-topbar-fixed');
-          }
-        } else if (topbar.parent().hasClass('fixed')) {
-          if (self.settings.scrolltop) {
-            topbar.parent().removeClass('fixed');
-            topbar.addClass('fixed');
-            $('body').removeClass('f-topbar-fixed');
-
-            window.scrollTo(0,0);
-          } else {
-              topbar.parent().removeClass('expanded');
-          }
-        }
-      } else {
-        if(topbar.parent().hasClass(self.settings.stickyClass)) {
-          topbar.parent().addClass('fixed');
-        }
-
-        if(topbar.parent().hasClass('fixed')) {
-          if (!topbar.hasClass('expanded')) {
-            topbar.removeClass('fixed');
-            topbar.parent().removeClass('expanded');
-            self.updateStickyPositioning();
-          } else {
-            topbar.addClass('fixed');
-            topbar.parent().addClass('expanded');
-          }
-        }
-      }
     },
 
     timer : null,
